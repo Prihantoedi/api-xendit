@@ -13,7 +13,8 @@ const upload = multer({ dest: 'uploads/' });
 
 
 
-let allowedOrigins = ['http://localhost'];
+// let allowedOrigins = ['http://localhost'];
+let allowedOrigins = ['*'];
 
 app.use(cors({
     origin: function(origin, callback){
