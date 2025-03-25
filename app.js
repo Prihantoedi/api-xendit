@@ -31,11 +31,11 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log('Server Listening on PORT: ', PORT);
-});
+// app.listen(PORT, () => {
+//     console.log('Server Listening on PORT: ', PORT);
+// });
 
 
 const authToken = Buffer.from(process.env.XENDIT_API_SECRET_KEY).toString('base64');
@@ -120,3 +120,5 @@ app.get('/notification', async(request, response) => {
     // });
 
 });
+
+module.exports = app;
