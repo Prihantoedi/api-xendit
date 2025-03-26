@@ -121,4 +121,4 @@ app.get('/notification', async(request, response) => {
 
 });
 
-module.exports = app;
+export default app;
