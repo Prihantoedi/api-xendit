@@ -4,12 +4,24 @@ import express from 'express';
 import dotenv from 'dotenv';
 import axios from 'axios';
 import multer from 'multer';
+import path from 'path';
+
 import { Xendit } from 'xendit-node';
 
 dotenv.config();
 
 const app = express();
-const upload = multer({ dest: 'uploads/' });
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, '/tmp'); //ganti dari uploads ke tmp
+    },
+    filename: function(req, file, cb){
+        cb(null, Date.now() + path.extname(file.originalname));
+    }
+});
+// const upload = multer({ dest: 'uploads/' });
+const upload = multer({ storage });
 
 
 
