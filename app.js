@@ -70,8 +70,8 @@ async function createInvoice(total){
                 customer_notification_preference: {
                     invoice_paid: ['email', 'whatsapp']
                 },
-                success_redirect_url: 'http://localhost/doku-payment/success.php',
-                failure_redirect_url: 'http://localhost/doku-payment/success.php',
+                success_redirect_url: 'http://localhost/doku-payment/public/success.php',
+                failure_redirect_url: 'http://localhost/doku-payment/public/success.php',
                 items: [
                     {
                         name: 'Mac Book Pro',
